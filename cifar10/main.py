@@ -173,8 +173,9 @@ if __name__ == '__main__':
     print('\nDecay Rate: %f' % args.lr_decay)
 
     use_cuda = torch.cuda.is_available()
-    print('Current devices: ' + str(torch.cuda.current_device()))
-    print('Device count: ' + str(torch.cuda.device_count()))
+    if use_cuda:
+        print('Current devices: ' + str(torch.cuda.current_device()))
+        print('Device count: ' + str(torch.cuda.device_count()))
 
     # Set the seed for reproducing the results
     random.seed(args.rand_seed)
@@ -194,7 +195,7 @@ if __name__ == '__main__':
     if not os.path.exists('trained_nets/' + save_folder):
         os.makedirs('trained_nets/' + save_folder)
 
-    f = open('trained_nets/' + save_folder + '/log.out', 'a', 0)
+    f = open('trained_nets/' + save_folder + '/log.out', 'a')
 
     trainloader, testloader = dataloader.get_data_loaders(args)
 
