@@ -1,13 +1,13 @@
 import os
 import torch, torchvision
-# from .models import vgg
-# from .models import resnet
-# from .models import densenet
-# from .models import simplenet
-from models import vgg
-from models import resnet
-from models import densenet
-from models import simplenet
+from .models import vgg
+from .models import resnet
+from .models import densenet
+from .models import simplenet
+# from models import vgg
+# from models import resnet
+# from models import densenet
+# from models import simplenet
 
 # map between model name and function
 models = {

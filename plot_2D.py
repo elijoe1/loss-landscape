@@ -110,7 +110,13 @@ def plot_trajectory(proj_file, dir_file, show=False):
     assert exists(proj_file), "Projection file does not exist."
     f = h5py.File(proj_file, "r")
     fig = plt.figure()
-    plt.plot(list(f["proj_xcoord"]), list(f["proj_ycoord"]), marker=".")
+    xs = list(f["proj_xcoord"])
+    ys = list(f["proj_ycoord"])
+    plt.plot(xs, ys, marker=".")
+    # for i, coords in enumerate(zip(xs,ys)):
+    #     if not i % 10:
+    #         label = "{:.2f}".format(losses[i])
+    #         plt.annotate(label, coords, textcoords="offset points", xytext=(0,10), ha='center')
     plt.tick_params("y", labelsize="x-large")
     plt.tick_params("x", labelsize="x-large")
     f.close()

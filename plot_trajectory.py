@@ -9,7 +9,7 @@ import math
 import h5py
 import os
 import argparse
-import model_loader
+from cifar10 import model_loader
 import net_plotter
 from projection import setup_PCA_directions, project_trajectory
 import plot_2D
@@ -37,9 +37,16 @@ if __name__ == '__main__':
     # load the final model
     #--------------------------------------------------------------------------
     last_model_file = args.model_folder + '/' + args.prefix + str(args.max_epoch) + args.suffix
-    net = model_loader.load(args.dataset, args.model, last_model_file)
+    net = model_loader.load(args.model, last_model_file)
     w = net_plotter.get_weights(net)
     s = net.state_dict()
+    #
+    # log_file = args.model_folder + '/log.out'
+    #
+    # losses = []
+    # with open(log_file) as f:
+    #     for line in f:
+    #         losses.append(float(line.split()[3]))
 
     #--------------------------------------------------------------------------
     # collect models to be projected
