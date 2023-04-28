@@ -195,7 +195,7 @@ if __name__ == '__main__':
     if not os.path.exists('trained_nets/' + save_folder):
         os.makedirs('trained_nets/' + save_folder)
 
-    f = open('trained_nets/' + save_folder + '/log.out', 'a')
+    f = open('trained_nets/' + save_folder + '/log.out', 'w')
 
     trainloader, testloader = dataloader.get_data_loaders(args)
 
@@ -244,6 +244,7 @@ if __name__ == '__main__':
         status = 'e: %d loss: %.5f train_err: %.3f test_top1: %.3f test_loss %.5f \n' % (0, train_loss, train_err, test_err, test_loss)
         print(status)
         f.write(status)
+        f.flush()
 
         state = {
             'acc': 100 - test_err,
@@ -263,6 +264,7 @@ if __name__ == '__main__':
         status = 'e: %d loss: %.5f train_err: %.3f test_top1: %.3f test_loss %.5f \n' % (epoch, loss, train_err, test_err, test_loss)
         print(status)
         f.write(status)
+        f.flush()
 
         # Save checkpoint.
         acc = 100 - test_err

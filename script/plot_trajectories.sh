@@ -1,0 +1,8 @@
+python ../plot_trajectory.py --dataset cifar10 --model simplenet --model_folder ./trained_nets/simplenet_adam_lr=0.1_bs=128_wd=0.0_mom=0.9_save_epoch=1 --start_epoch 0 --max_epoch 97 --save_epoch 1 &
+python ../plot_trajectory.py --dataset cifar10 --model simplenet --model_folder ./trained_nets/simplenet_adam_lr=0.1_bs=128_wd=0.0005_mom=0.9_save_epoch=1 --start_epoch 0 --max_epoch 23 --save_epoch 1 &
+python ../plot_trajectory.py --dataset cifar10 --model simplenet --model_folder ./trained_nets/simplenet_adam_lr=0.1_bs=8192_wd=0.0_mom=0.9_save_epoch=1 --start_epoch 0 --max_epoch 100 --save_epoch 1 &
+python ../plot_trajectory.py --dataset cifar10 --model simplenet --model_folder ./trained_nets/simplenet_adam_lr=0.1_bs=8192_wd=0.0005_mom=0.9_save_epoch=1 --start_epoch 0 --max_epoch 100 --save_epoch 1
+python ../plot_trajectory.py --dataset cifar10 --model simplenet --model_folder ./trained_nets/simplenet_sgd_lr=0.1_bs=128_wd=0.0_mom=0.9_save_epoch=1 --start_epoch 0 --max_epoch 100 --save_epoch 1 &
+python ../plot_trajectory.py --dataset cifar10 --model simplenet --model_folder ./trained_nets/simplenet_sgd_lr=0.1_bs=128_wd=0.0005_mom=0.9_save_epoch=1 --start_epoch 0 --max_epoch 97 --save_epoch 1 &
+python ../plot_trajectory.py --dataset cifar10 --model simplenet --model_folder ./trained_nets/simplenet_sgd_lr=0.1_bs=8192_wd=0.0_mom=0.9_save_epoch=1 --start_epoch 0 --max_epoch 99 --save_epoch 1 &
+python ../plot_trajectory.py --dataset cifar10 --model simplenet --model_folder ./trained_nets/simplenet_sgd_lr=0.1_bs=8192_wd=0.0005_mom=0.9_save_epoch=1 --start_epoch 0 --max_epoch 99 --save_epoch 1
